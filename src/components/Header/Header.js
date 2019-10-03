@@ -5,7 +5,7 @@ const Header = () => {
     return (
     <div className='header-container'>
         <h1 className='header-title'>Furtastic Fotos</h1>
-        <p className='header-subtitle'>Browse through random images of furry friends all in one place!</p>
+        <p className='header-subtitle'>Select a breed to view dogs specific to that breed!</p>
     </div>
     )
 }

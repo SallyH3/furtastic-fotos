@@ -1,0 +1,13 @@
+.breed-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.breed-name {
+  cursor: pointer;
+  text-align: center;
+}
+
+.breed-name:hover {
+  color: purple;
+}
