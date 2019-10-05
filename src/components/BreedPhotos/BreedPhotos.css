@@ -1,0 +1,11 @@
+.breed-photo-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.breed-photo {
+  height: 250px;
+  margin: 20px;
+  width: 250px;
+}

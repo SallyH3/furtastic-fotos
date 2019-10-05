@@ -22,7 +22,7 @@ class Breeds extends Component {
       <div>
         <div className='breed-container'>{breedItems}</div>
       </div>
-    );
+    )
   }
 }
 

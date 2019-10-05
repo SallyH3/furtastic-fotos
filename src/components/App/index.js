@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from '../Header/Header';
-import Breeds from '../Breeds/Breeds';
+import Header from '../Header';
+import Breeds from '../Breeds';
+import BreedPhotos from '../BreedPhotos';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      photos: [],
       breedName: '',
       breeds: [],
+      photos: [],
       hasErrors : false
     }
   }
@@ -18,11 +19,12 @@ class App extends Component {
     this.setState({
       breedName: breedName,
     })
-    this.selectBreed();
+    this.selectBreed(breedName);
   }
 
   selectBreed = (breedName) => {
-    fetch(`https://dog.ceo/api/breed/${breedName}/images`)
+    const photoUrl = `https://dog.ceo/api/breed/${breedName}/images/random/2`
+    fetch(photoUrl)
     .then(res => res.json())
     .then(breed => this.setState({ photos: breed.message }))
     .catch(() => this.setState({ hasErrors: true }))
@@ -37,13 +39,16 @@ class App extends Component {
   }
 
   render() {
-    console.log('breed', this.breedName)
     return (
       <div>
         <Header />
         <Breeds 
           breeds={this.state.breeds} 
           getSelectedBreed={this.getSelectedBreed}
+        />
+        <BreedPhotos 
+          photos={this.state.photos}
+          breedName={this.state.breedName}
         />
       </div>
     )
