@@ -16,14 +16,12 @@ class App extends Component {
   }
 
   getSelectedBreed = (breedName) => {
-    this.setState({
-      breedName: breedName,
-    })
+    this.setState({ breedName: breedName })
     this.selectBreed(breedName);
   }
 
   selectBreed = (breedName) => {
-    const photoUrl = `https://dog.ceo/api/breed/${breedName}/images/random/2`
+    const photoUrl = `https://dog.ceo/api/breed/${ breedName }/images/random/2`
     fetch(photoUrl)
     .then(res => res.json())
     .then(breed => this.setState({ photos: breed.message }))
@@ -33,9 +31,9 @@ class App extends Component {
   componentDidMount() {
     const breedUrl = 'https://dog.ceo/api/breeds/list/all'
     fetch(breedUrl)
-      .then(res => res.json())
-      .then(data => this.setState({breeds: data.message}))
-      .catch(() => this.setState({ hasErrors: true }))
+    .then(res => res.json())
+    .then(data => this.setState({ breeds: data.message }))
+    .catch(() => this.setState({ hasErrors: true }))
   }
 
   render() {
@@ -43,12 +41,12 @@ class App extends Component {
       <div>
         <Header />
         <Breeds 
-          breeds={this.state.breeds} 
-          getSelectedBreed={this.getSelectedBreed}
+          breeds={ this.state.breeds } 
+          getSelectedBreed={ this.getSelectedBreed }
         />
         <BreedPhotos 
-          photos={this.state.photos}
-          breedName={this.state.breedName}
+          photos={ this.state.photos }
+          breedName={ this.state.breedName }
         />
       </div>
     )

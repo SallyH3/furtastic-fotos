@@ -1,13 +1,16 @@
 .breed-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .breed-name {
   cursor: pointer;
+  margin: 20px;
+  padding: 5px;
   text-align: center;
 }
 
 .breed-name:hover {
-  color: #800080;
+  color: #3434f1;
 }

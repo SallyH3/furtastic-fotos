@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './Breeds.css';
 
 class Breeds extends Component {
@@ -12,15 +12,15 @@ class Breeds extends Component {
   render() {
     const listOfBreeds = Object.keys(this.props.breeds)
     const breedItems = listOfBreeds.map((breedName, index) =>
-      <div key={index}>
-      <div onClick={()=>this.props.getSelectedBreed(breedName)}>
-        <p className='breed-name' onClick={()=>this.props.getSelectedBreed(breedName)}>{breedName}</p>
+      <div key={ index }>
+      <div onClick={() => this.props.getSelectedBreed(breedName)}>
+        <p className='breed-name' onClick={() => this.props.getSelectedBreed(breedName)}>{ breedName }</p>
       </div>
     </div>
     )
     return (
       <div>
-        <div className='breed-container'>{breedItems}</div>
+        <div className='breed-container'>{ breedItems }</div>
       </div>
     )
   }

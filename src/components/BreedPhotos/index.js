@@ -1,13 +1,13 @@
 import React from 'react';
 import './BreedPhotos.css';
 
-const BreedPhotos = ({photos}) => {
-  const breedImg = photos.map((photo, key) => 
-    <img key={key} className='breed-photo' src={photo} alt='Dog' />
+const BreedPhotos = ({ photos }) => {
+  const breedImg = photos.map((photo, index) => 
+    <img key={ index } className='breed-photo' src={ photo } alt='Dog' />
   )
   return(
     <div className='breed-photo-container'>
-      {breedImg}
+      { breedImg }
     </div>
   )   
 

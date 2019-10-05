@@ -2,12 +2,12 @@ import React from 'react';
 import './Header.css';
 
 const Header = () => {
-    return (
+  return (
     <div className='header-container'>
-        <h1 className='header-title'>Furtastic Fotos</h1>
-        <p className='header-subtitle'>Select a breed and scroll down to view dogs specific to that breed!</p>
+      <h1 className='header-title'>Furtastic Fotos</h1>
+      <p className='header-subtitle'>Select a breed and scroll down to view dogs specific to that breed!</p>
     </div>
-    )
+  )
 }
 
 export default Header;
