@@ -27,6 +27,7 @@
   margin: 10px;
   padding: 5px;
   text-align: center;
+  text-transform: capitalize;
   transform: translateZ(0);
   transition-duration: 0.3s;
   transition-property: transform;
@@ -34,9 +35,9 @@
 
 .breed-name:hover, .breed-name:focus, .breed-name:active {
   -webkit-transform: scale(0.9);
-  background-color: #f7f8c8;
+  background-color: #f3df46;
   border-radius: 7px;
-  color: #383847;
+  color: #391063;
   font-weight: bolder;
   transform: scale(0.9);
 }
