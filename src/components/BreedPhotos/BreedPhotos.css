@@ -5,7 +5,8 @@
 }
 
 .breed-photo {
+  border-radius: 4px;
   height: 250px;
   margin: 20px;
-  width: 250px;
+  width: 275px;
 }
