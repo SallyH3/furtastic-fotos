@@ -20,7 +20,7 @@ npm install
 
 ## GIF of the project:
 
-![2019-10-05 14 15 03](https://user-images.githubusercontent.com/40863560/66260338-b9c17300-e77a-11e9-958b-70a1fa1156b9.gif)
+![2019-10-14 14 28 03](https://user-images.githubusercontent.com/40863560/66780781-ecf8b600-ee8e-11e9-878e-d53f81c183a3.gif)
 
 ## Technologies used:
 
