@@ -41,11 +41,9 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return ({
+const mapStateToProps = (state) => ({
     breeds: state.breeds,
     photos: state.photos
-  })
-}
+})
 
 export default connect(mapStateToProps, {loadAllBreeds, selectBreed})(App);
