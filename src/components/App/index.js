@@ -1,39 +1,27 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import './App.css';
 import Header from '../Header';
 import Breeds from '../Breeds';
 import BreedPhotos from '../BreedPhotos';
+import { loadAllBreeds, selectBreed } from '../../actions/index';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       breedName: '',
-      breeds: [],
-      photos: [],
-      hasErrors : false
     }
   }
 
   getSelectedBreed = (breedName) => {
     this.setState({ breedName: breedName })
-    this.selectBreed(breedName);
-  }
-
-  selectBreed = (breedName) => {
-    const photoUrl = `https://dog.ceo/api/breed/${ breedName }/images/random/2`
-    fetch(photoUrl)
-    .then(res => res.json())
-    .then(breed => this.setState({ photos: breed.message }))
-    .catch(() => this.setState({ hasErrors: true }))
+    this.props.selectBreed(breedName);
   }
 
   componentDidMount() {
-    const breedUrl = 'https://dog.ceo/api/breeds/list/all'
-    fetch(breedUrl)
-    .then(res => res.json())
-    .then(data => this.setState({ breeds: data.message }))
-    .catch(() => this.setState({ hasErrors: true }))
+    this.props.loadAllBreeds();
   }
 
   render() {
@@ -41,11 +29,11 @@ class App extends Component {
       <div>
         <Header />
         <Breeds 
-          breeds={ this.state.breeds } 
+          breeds={ this.props.breeds } 
           getSelectedBreed={ this.getSelectedBreed }
         />
         <BreedPhotos 
-          photos={ this.state.photos }
+          photos={ this.props.photos }
           breedName={ this.state.breedName }
         />
       </div>
@@ -53,4 +41,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return ({
+    breeds: state.breeds,
+    photos: state.photos
+  })
+}
+
+export default connect(mapStateToProps, {loadAllBreeds, selectBreed})(App);
