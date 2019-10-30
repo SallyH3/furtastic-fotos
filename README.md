@@ -24,6 +24,7 @@ npm install
 
 ## Technologies used:
 
+* Redux
 * ReactJS 
 * CSS3
 * fetch API
