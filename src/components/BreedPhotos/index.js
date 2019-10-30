@@ -1,8 +1,8 @@
 import React from 'react';
 import './BreedPhotos.css';
 
-const BreedPhotos = ({ photos }) => {
-  const breedImg = photos.map((photo, index) => 
+const BreedPhotos = (props) => {
+  const breedImg = props.photos.map((photo, index) => 
     <img key={ index } className='breed-photo' src={ photo } alt='Dog' />
   )
   return(
